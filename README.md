@@ -203,7 +203,7 @@ Experience FocusHub directly in your browser.
 
 **Live Application**
 
-🔗 **https://your-domain.com**
+🔗 **[https://Focuskaro.app](https://akshaykurve.github.io/Assignment-9/)**
 
 No installation, registration, or setup required.
 
@@ -332,14 +332,6 @@ git push origin feature/new-feature
 ```
 
 5. Open a Pull Request
-
----
-
-# License
-
-This project is licensed under the MIT License.
-
-See the `LICENSE` file for details.
 
 ---
 
