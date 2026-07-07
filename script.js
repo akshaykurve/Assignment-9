@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // ==========================================
-    // DATA ENGINE STORAGE ARCHITECTURE
-    // ==========================================
+    
+    
+    
     let state = {
         todos: JSON.parse(localStorage.getItem('dash-v2-todos')) || [],
         plannerBlocks: JSON.parse(localStorage.getItem('dash-v2-planner')) || [],
@@ -14,16 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
         pomoConfig: JSON.parse(localStorage.getItem('dash-v2-pomo-cfg')) || { work: 25, short: 5, long: 15, rounds: 4 }
     };
 
-    // ==========================================
-    // MAIN INITIALIZATION LAYER
-    // ==========================================
+    
+    
+    
     function init() {
         initNavigation();
         initDateTimeAndBackground();
         initTheme();
         initWeatherEngine();
         
-        // Render module logic boards
+        
         renderTodos();
         initTimePickerWheels();
         renderPlanner();
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initQuoteEngine();
     }
 
-    // UPDATED NAVIGATION: TOGGLE BUTTON HIDES & LOGO EXPANDS WHEN COLLAPSED
+    
     function initNavigation() {
         const sidebar = document.getElementById('sidebar');
         const sidebarToggle = document.getElementById('sidebar-toggle');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebar.classList.add('collapsed');
         }
 
-        // Toggle button collapses sidebar
+        
         sidebarToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             sidebar.classList.add('collapsed');
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('sidebar-collapsed', 'true');
         });
 
-        // Logo handles expand when clicked inside a collapsed state frame
+        
         logoNode.addEventListener('click', () => {
             if (state.sidebarCollapsed) {
                 sidebar.classList.remove('collapsed');
@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('celebration-overlay').classList.remove('hidden');
     }
 
-    // ==========================================
-    // CHRONO TIMER CLOCKS & AMBIENCE INDUCTION
-    // ==========================================
+    
+    
+    
     function initDateTimeAndBackground() {
         const clockEl = document.getElementById('live-clock');
         const dateEl = document.getElementById('live-date');
@@ -119,9 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================
-    // MODULE: ADVANCED PRIORITY TASK MANAGER
-    // ==========================================
+    
+    
+    
     const todoForm = document.getElementById('todo-form');
     const todoInput = document.getElementById('todo-input');
     const todoPriority = document.getElementById('todo-priority');
@@ -185,9 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // ==========================================
-    // MODULE: DYNAMIC ACCESSIBLE TIMESLOT WHEELS
-    // ==========================================
+    
+    
+    
     const plannerForm = document.getElementById('planner-form');
     const plannerLabel = document.getElementById('planner-label');
     const plannerContainer = document.getElementById('planner-container');
@@ -198,14 +198,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const eHour = document.getElementById('planner-end-hour');
         const eMin = document.getElementById('planner-end-min');
 
-        // Build 24 hour selections
+        
         let hourOptions = '';
         for(let i=0; i<24; i++) {
             let val = i.toString().padStart(2, '0');
             hourOptions += `<option value="${val}">${val}</option>`;
         }
         
-        // Build streamlined 5-minute selector segments
+        
         let minOptions = '';
         for(let i=0; i<60; i+=5) {
             let val = i.toString().padStart(2, '0');
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sMin.innerHTML = minOptions;
         eMin.innerHTML = minOptions;
 
-        // Set practical dynamic default seeds
+        
         sHour.value = "09";
         eHour.value = "10";
     }
@@ -262,9 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================
-    // MODULE: MACRO TARGET OBJECTIVES ENGINE
-    // ==========================================
+    
+    
+    
     const goalsForm = document.getElementById('goals-form');
     const goalInput = document.getElementById('goal-input');
     const goalsList = document.getElementById('goals-list');
@@ -323,9 +323,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('goals-progress-fill').style.width = `${percent}%`;
     }
 
-    // ==========================================
-    // MODULE: PARAMETRIC STEPPER POMODORO ENGINE
-    // ==========================================
+    
+    
+    
     function initPomodoroEngine() {
         let timer = null;
         let timeLeft = state.pomoConfig.work * 60;
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const status = document.getElementById('pomodoro-status');
         const roundTracker = document.getElementById('pomo-round-tracker');
 
-        // Load visual elements from saved structural profiles
+        
         document.getElementById('pomo-work-val').textContent = state.pomoConfig.work;
         document.getElementById('pomo-short-val').textContent = state.pomoConfig.short;
         document.getElementById('pomo-long-val').textContent = state.pomoConfig.long;
@@ -360,10 +360,10 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (currentMode === 'longBreak') status.textContent = "🌲 Extended Recharge Interval";
         }
 
-        // Stepper click listener registration matrix
+        
         document.querySelectorAll('.stepper-control').forEach(stepper => {
             const valEl = stepper.querySelector('.step-value');
-            const targetKey = valEl.id.split('-')[1]; // Grabs 'work', 'short', etc.
+            const targetKey = valEl.id.split('-')[1]; 
 
             stepper.addEventListener('click', (e) => {
                 const btn = e.target.closest('.step-btn');
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!timer) syncEngineTime();
             });
 
-            // Convert raw element container to act as implicit hit increments
+            
             const plusBtn = document.createElement('button');
             plusBtn.type = 'button';
             plusBtn.className = 'step-btn up';
@@ -440,9 +440,9 @@ document.addEventListener('DOMContentLoaded', () => {
         syncEngineTime();
     }
 
-    // ==========================================
-    // MODULE: INSIGHT KNOWLEDGE STORAGE DATABASE
-    // ==========================================
+    
+    
+    
     function initQuoteEngine() {
         const textEl = document.getElementById('quote-text');
         const authorEl = document.getElementById('quote-author');
@@ -502,9 +502,9 @@ document.addEventListener('DOMContentLoaded', () => {
         renderFavorites();
     }
 
-    // ==========================================
-    // MODULE: CHRONOLOGICAL WEATHER TIMELINE
-    // ==========================================
+    
+    
+    
     function initWeatherEngine() {
         const minimalEl = document.getElementById('header-weather');
         const expandedEl = document.getElementById('weather-expanded');

@@ -1,6 +1,4 @@
-/* ==========================================================================
-   COLORTHEME ARCHITECTURE: SLATE & SAGE COMFORT BALANCING
-   ========================================================================== */
+
 :root {
     --bg-morning: #f4f6f8;
     --bg-afternoon: #f0f4f8;
@@ -47,9 +45,7 @@
 
 .hidden { display: none !important; }
 
-/* ==========================================================================
-   APP CONTAINER HOOK LAYOUTS
-   ========================================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -74,9 +70,7 @@ body {
     overflow: hidden; 
 }
 
-/* ==========================================================================
-   SIDEBAR RECONFIGURED WITH CONDITIONAL HIDDEN TOGGLES
-   ========================================================================== */
+
 .sidebar {
     width: 280px;
     height: 100%; 
@@ -116,7 +110,6 @@ body {
     transition: transform 0.2s ease;
 }
 
-/* Transform logo into an interactive click tile when compressed */
 .sidebar.collapsed .sidebar-logo {
     cursor: pointer;
 }
@@ -157,7 +150,6 @@ body {
     transition: background 0.2s;
 }
 
-/* Completely remove toggle element from render trees when collapsed */
 .sidebar.collapsed #sidebar-toggle {
     display: none !important;
 }
@@ -260,9 +252,7 @@ body {
 .theme-icon { font-size: 1.25rem; margin-right: 0.875rem; }
 .sidebar.collapsed .theme-icon { margin-right: 0; }
 
-/* ==========================================================================
-   WORKSPACE CONTROL GRID
-   ========================================================================== */
+
 .main-workspace {
     flex: 1;
     display: flex;
@@ -328,9 +318,7 @@ body {
 .section-title-block h2 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em; }
 .section-subtitle { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.35rem; }
 
-/* ==========================================================================
-   FORM INPUT ELEMENTS & STRUCTURAL NODES
-   ========================================================================== */
+
 .input-group, .advanced-input-group {
     display: flex;
     gap: 0.75rem;
@@ -374,9 +362,7 @@ button:active { transform: scale(0.98); }
 .warning-btn { background: var(--warning-color); color: #fff; }
 .danger-btn { background: var(--danger-color); color: #fff; }
 
-/* ==========================================================================
-   WIDGET FEATURE INJECTIONS & LIST SCALING
-   ========================================================================== */
+
 .item-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
 
 .item-row {
@@ -396,7 +382,6 @@ button:active { transform: scale(0.98); }
 }
 .item-row.completed span { text-decoration: line-through; color: var(--text-light); }
 
-/* Priority Tags Styling Engine */
 .tag-badge {
     font-size: 0.75rem;
     padding: 0.2rem 0.5rem;
@@ -409,7 +394,6 @@ button:active { transform: scale(0.98); }
 .tag-medium { background: rgba(219, 119, 6, 0.1); color: var(--warning-color); }
 .tag-low { background: rgba(5, 150, 105, 0.1); color: var(--success-color); }
 
-/* Custom Flow Timeblocks */
 .custom-planner-stream { display: flex; flex-direction: column; gap: 0.75rem; }
 .planner-block {
     display: grid;
@@ -423,9 +407,7 @@ button:active { transform: scale(0.98); }
 .planner-timestamp { font-weight: 700; color: var(--text-muted); font-size: 0.9rem; }
 .planner-text { font-size: 1rem; color: var(--text-main); font-weight: 500; }
 
-/* ==========================================================================
-   HIGH ACCESSIBILITY SELECTOR WHEELS & CARDS
-   ========================================================================== */
+
 .picker-form-card {
     background: var(--panel-bg);
     border: 1px solid var(--border-color);
@@ -495,9 +477,7 @@ button:active { transform: scale(0.98); }
     gap: 0.75rem;
 }
 
-/* ==========================================================================
-   TACTILE STEPPER SWITCH MECHANICS (POMODORO)
-   ========================================================================== */
+
 .pomodoro-config-panel {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
@@ -553,7 +533,6 @@ button:active { transform: scale(0.98); }
     margin-left: 2px;
 }
 
-/* Macro Metrics Progression Cards */
 .progress-container {
     background: var(--panel-bg);
     border: 1px solid var(--border-color);
@@ -568,7 +547,6 @@ button:active { transform: scale(0.98); }
 
 .round-tracker { font-size: 0.95rem; font-weight: 700; color: var(--text-muted); margin-bottom: 1.5rem; }
 
-/* Quotes Layout Architecture */
 .quote-workspace-layout {
     display: grid;
     grid-template-columns: 1fr 320px;
@@ -596,7 +574,6 @@ button:active { transform: scale(0.98); }
 .fav-quote-item span { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
 .structural-star-btn { color: var(--warning-color) !important; font-weight: 700; }
 
-/* Hourly Weather Metrics Engine */
 .subsection-header { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 1rem 0; letter-spacing: -0.02em; }
 .weather-hourly-timeline {
     display: grid;
@@ -617,7 +594,6 @@ button:active { transform: scale(0.98); }
 .hourly-node-temp { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
 .hourly-node-desc { font-size: 0.85rem; font-weight: 600; }
 
-/* Celebration Matrix Card Overlay */
 .celebration-overlay {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
